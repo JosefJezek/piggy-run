@@ -59,7 +59,13 @@ function initFlyAnimation () {
     fly.addAnimationFrame(assets.image`pterodactyl 1`)
     fly.addAnimationFrame(assets.image`pterodactyl 2`)
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    music.playTone(262, music.beat(BeatFraction.Quarter))
+    info.changeScoreBy(100)
+})
 let cloud: Sprite = null
+let bonus: Sprite = null
 let obstacle: Sprite = null
 let choice = 0
 let dead: animation.Animation = null
@@ -103,10 +109,12 @@ game.onUpdateInterval(50, function () {
             difficulty = difficulty + 1
         }
     }
-})
-game.onUpdateInterval(1000, function () {
-    ground1.vx += -1
-    ground2.vx += -1
+    if (ground1.x < -1 * (scene.screenWidth() / 2)) {
+        ground1.x = ground2.x + scene.screenWidth()
+    }
+    if (ground2.x < -1 * (scene.screenWidth() / 2)) {
+        ground2.x = ground1.x + scene.screenWidth()
+    }
 })
 game.onUpdateInterval(1000, function () {
     choice = randint(0, difficulty)
@@ -115,20 +123,26 @@ game.onUpdateInterval(1000, function () {
     if (choice == 0) {
         obstacle = sprites.createProjectileFromSide(assets.image`tree`, ground1.vx, 0)
         obstacle.y = 96
-        obstacle.z = 2
+        obstacle.z = 3
     } else if (choice == 1) {
         obstacle = sprites.createProjectileFromSide(assets.image`mushrooms`, ground1.vx, 0)
         obstacle.y = 99
-        obstacle.z = 2
+        obstacle.z = 3
     } else if (choice == 2) {
         obstacle = sprites.createProjectileFromSide(assets.image`snake`, ground1.vx, 0)
         obstacle.y = 92
-        obstacle.z = 2
+        obstacle.z = 3
     } else if (choice == 3) {
-    	
+        bonus = sprites.create(assets.image`apple`, SpriteKind.Food)
+        bonus.setPosition(150, 100)
+        bonus.z = 2
+        bonus.setVelocity(ground1.vx, 0)
+        bonus.say("+100")
     } else if (choice == 4) {
         createPterodactyl()
     }
+    ground1.vx += -1
+    ground2.vx += -1
 })
 game.onUpdateInterval(1500, function () {
     if (Math.percentChance(40)) {
@@ -136,15 +150,5 @@ game.onUpdateInterval(1500, function () {
         cloud.y = randint(20, 60)
         cloud.setKind(SpriteKind.Cloud)
         cloud.z = 1
-    }
-})
-forever(function () {
-    if (ground2.x < -1 * (scene.screenWidth() / 2)) {
-        ground2.x = ground1.x + scene.screenWidth()
-    }
-})
-forever(function () {
-    if (ground1.x < -1 * (scene.screenWidth() / 2)) {
-        ground1.x = ground2.x + scene.screenWidth()
     }
 })
