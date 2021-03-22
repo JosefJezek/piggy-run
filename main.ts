@@ -125,116 +125,7 @@ function createPterodactyl () {
     animation.attachAnimation(pterodactyl, fly)
     animation.setAction(pterodactyl, ActionKind.Flying)
 }
-controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (piggy.y == 94 && end == 0) {
-        piggy.vy = -160
-        animation.setAction(piggy, ActionKind.Jumping)
-        music.playTone(587, music.beat(BeatFraction.Quarter))
-    }
-})
-function initTRex () {
-    // trex = sprites.create(img`
-    // ...................................................................................cccc...........................................................................
-    // ..................................................................................c....c..........................................................................
-    // cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc......ccccccccccccccccc....ccccccccccccccccccccccccccccccccccccccccccccccccccccc
-    // .........................................................................................................cccc.....................................................
-    // ..................................................................................................................................................................
-    // ..cccc..c.......................c..cccc.........................cccc..c.............c..........................cccc..c...........c..ccc.................c..ccc....
-    // ..................................................................................................................................................................
-    // ...............cccc..c.........................cccc.c.......c..............cc.c........cccc..c.....cccc..c..................c...............cccc..c...............
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // ..................................................................................................................................................................
-    // `, SpriteKind.Player)
-    // trex = sprites.create(img`
-    // ................................
-    // ................................
-    // ................................
-    // ................................
-    // ................................
-    // ................................
-    // ................................
-    // ................................
-    // ................ffffffffffff....
-    // ...............ff.fffffffffff...
-    // ...............ffffffffffffff...
-    // ...............ffffffffffffff...
-    // ...............ffffffffffffff...
-    // ...............ffffffffffffff...
-    // ...............ffffffffffffff...
-    // ...............ffffff...........
-    // ...............fffffffffff......
-    // ......f.......ffffff............
-    // ......f......fffffff............
-    // ......ff....ffffffffff..........
-    // ......fff..fffffffff.f..........
-    // ......ffffffffffffff............
-    // ......ffffffffffffff............
-    // ......ffffffffffffff............
-    // .......fffffffffffff............
-    // ........ffffffffffff............
-    // .........ffffffffff.............
-    // ..........ffffffff..............
-    // ...........fff1ff...............
-    // ...........ff111f...............
-    // ...........f....f...............
-    // ...........ff...ff..............
-    // `, SpriteKind.Player)
-    // trex = sprites.create(img`
-    // ...............................
-    // ...............................
-    // ...............................
-    // ...............................
-    // ...............................
-    // ..........333333333333333......
-    // ........33333333333333333.333..
-    // ..33..33333333333333333333333..
-    // .3333333333333333333333333333..
-    // .3333333333333333333333333333..
-    // .333333333333333333333333333...
-    // ..3333333333333333333333333....
-    // ....333333333333333333333333...
-    // ....33333333333333333333ee333..
-    // ....33333333333333333333ee3322.
-    // ....33333333333333333333333eee2
-    // ....33333333333333333333333eee3
-    // ....33333333333333333333333323.
-    // .....333333333333333333333333..
-    // .....33333333333333333333333...
-    // ....33333333333333333333333....
-    // ....3333333333333333333333.....
-    // ....3333333333...333333........
-    // ....33333333.....333333........
-    // ....33b33be......33bbbe........
-    // ....eeeeece......eeeece........
-    // ....eeeeeee......eeeecc........
-    // ...............................
-    // ...............................
-    // ...............................
-    // ...............................
-    // ...............................
-    // `, SpriteKind.Player)
+function initPiggy () {
     piggy = sprites.create(img`
         ...............................
         ...............................
@@ -304,492 +195,6 @@ function initTRex () {
         .........333........333........
         .........eee........eee........
         `)
-    // idle.addAnimationFrame(img`
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3333fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33333333333333fffffffffffffffffffffffffffffff3333333fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33333333333333333333333333333333fffffffffffffffffff33333333333fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3333333333333333333333333333333333333333333ffffffffff333333333333333fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333fff33333333333333333ffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffff33ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff33333ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffff33333333ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffff333333333333ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffff3333333333333333ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffff3333333333333333333ffffffffff
-    // ffffffffffffffffff3333ffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333ff333333333333333333333ffffffffff
-    // ffffffffffffffff33333333fffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffff
-    // fffffffffffffff3333333333fffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffff
-    // ffffffffffffff33333333333ffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // ffffffffffffff333333333333ffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // fffffffffffff333333ff33333ffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // fffffffffffff333333fff3333ffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffff
-    // fffffffffffff33333ffff3333fffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffff
-    // fffffffffffff33333ffff3333ffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffff
-    // fffff3fffffff33333ffff3333fffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffff
-    // ffffff3ffffff333333ff3333ffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffff
-    // ffffff33fffff333333ff3333fffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffff
-    // fffffff33ffff33333333333fffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffff
-    // ffffffff333fff333333333ffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffff
-    // fffffffff3333333333333ffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffff
-    // fffffffffff333333333333fffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff
-    // fffffffffffffff333333333fff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffff
-    // ffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffff
-    // ffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffff
-    // fffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffff
-    // ffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffff
-    // fffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffff
-    // fffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffff
-    // ffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffff
-    // fffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff
-    // fffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bb33333333333333fffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bffffb3333333333333ffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffff333333333333333ffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bffffffb3333333333333333ffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bffffffb333333333333322442ffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffff33333333333422222222effffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bffffb333333333322222222222efffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bb333333333334222222222222fffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322222222222222ffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222222222222222ffff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222ee22222e22222fff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222ee2222eee2222fff
-    // ffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222eeee222eeee222fff
-    // ffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222eeee222eeee222fff
-    // ffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222eeee222eeee222fff
-    // ffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222eeee222eeee222fff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222ee2222eee2223fff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222ee22222e22223fff
-    // fffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222222222222224ffff
-    // fffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322222222222222ffff
-    // fffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333334222222222222fffff
-    // fffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322222222222efffff
-    // ffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333422222224effffff
-    // ffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322433ffffffff
-    // ffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffff
-    // fffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffff
-    // fffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // fffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // fffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffff
-    // ffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffff
-    // ffffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffff
-    // ffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffff
-    // fffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff
-    // fffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffff
-    // fffffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffff
-    // ffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffff
-    // fffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffffff
-    // ffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffff
-    // fffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333ffffffffffffffff33333333333333333333333333333ffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff333333333333333333333333333333333333333333333333fffffffffffffffff3333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333fffffffffffffffffff3333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333fffffffffffffffffffff3333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333ffffffffffffffffffffffff3333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333ffffffffffffffffffffffffffff333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333ffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff3333333333333333333333333fffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff3333333333333333333333333fffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff333333333333bbeff33333333333beefffffffffffffffffffffffffffffffffff3333333333333be3333333beefffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333bbeeeeeff3333333beeeccccfffffffffffffffffffffffffffffffffff3333333bbbeeeeb33beeeccccffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333bbeeeeeeeeeff333beeeccccccccfffffffffffffffffffffffffffffffffff333bbbeeeeeeeeeeeccccccccffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbbeeeeeeeeeeeeeefeeeccccccccccccfffffffffffffffffffffffffffffffffffbbeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeefecccccccccccccccffffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeccccccccccfffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeefecccccccccccccccffffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeccccccccccfffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeeeecccccccccccccccffffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeccccccccccfffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeeeeccccccccccccccccfffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeeeeccccccccccccccccfffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeeeeccccccccccccccccfffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffebbbbbbbbbbbbbeeeeeeeeeeeeeeeeecccfffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // `)
-    // idle.addAnimationFrame(img`
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3333fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33333333333333fffffffffffffffffffffffffffffff3333333fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33333333333333333333333333333333fffffffffffffffffff33333333333fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3333333333333333333333333333333333333333333ffffffffff333333333333333fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333fff33333333333333333ffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffff33ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff33333ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffff33333333ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffff333333333333ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffff3333333333333333ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffff3333333333333333333ffffffffff
-    // ffffffffffffffffff3333ffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333ff333333333333333333333ffffffffff
-    // ffffffffffffffff33333333fffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffff
-    // fffffffffffffff3333333333fffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffff
-    // ffffffffffffff33333333333ffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // ffffffffffffff333333333333ffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // fffffffffffff333333ff33333ffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // fffffffffffff333333fff3333ffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffff
-    // fffffffffffff33333ffff3333fffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffff
-    // fffffffffffff33333ffff3333ffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffff
-    // fffff3fffffff33333ffff3333fffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffff
-    // ffffff3ffffff333333ff3333ffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffff
-    // ffffff33fffff333333ff3333fffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffff
-    // fffffff33ffff33333333333fffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffff
-    // ffffffff333fff333333333ffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffff
-    // fffffffff3333333333333ffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffff
-    // fffffffffff333333333333fffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff
-    // fffffffffffffff333333333fff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffff
-    // ffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffff
-    // ffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffff
-    // fffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffff
-    // ffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffff
-    // fffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffff
-    // fffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffff
-    // ffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffff
-    // fffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff
-    // fffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bb33333333333333fffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bffffb3333333333333ffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffff333333333333333ffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bffffffb3333333333333333ffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bffffffb333333333333322442ffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffff33333333333422222222effffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bffffb333333333322222222222efffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bb333333333334222222222222fffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322222222222222ffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222222222222222ffff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222ee22222e22222fff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222ee2222eee2222fff
-    // ffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222eeee222eeee222fff
-    // ffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222eeee222eeee222fff
-    // ffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222eeee222eeee222fff
-    // ffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222eeee222eeee222fff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222ee2222eee2223fff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222ee22222e22223fff
-    // fffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222222222222224ffff
-    // fffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322222222222222ffff
-    // fffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333334222222222222fffff
-    // fffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322222222222efffff
-    // ffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333422222224effffff
-    // ffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322433ffffffff
-    // ffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffff
-    // fffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffff
-    // fffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // fffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // fffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffff
-    // ffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffff
-    // ffffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffff
-    // ffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffff
-    // fffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff
-    // fffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffff
-    // fffffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffff
-    // ffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffff
-    // fffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffffff
-    // ffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffff
-    // fffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333ffffffffffffffff33333333333333333333333333333ffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff333333333333333333333333333333333333333333333333fffffffffffffffff3333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333fffffffffffffffffff3333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333fffffffffffffffffffff3333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333ffffffffffffffffffffffff3333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333ffffffffffffffffffffffffffff333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333ffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff3333333333333333333333333fffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff3333333333333333333333333fffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff333333333333bbeff33333333333beefffffffffffffffffffffffffffffffffff3333333333333be3333333beefffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333bbeeeeeff3333333beeeccccfffffffffffffffffffffffffffffffffff3333333bbbeeeeb33beeeccccffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333bbeeeeeeeeeff333beeeccccccccfffffffffffffffffffffffffffffffffff333bbbeeeeeeeeeeeccccccccffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbbeeeeeeeeeeeeeefeeeccccccccccccfffffffffffffffffffffffffffffffffffbbeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeefecccccccccccccccffffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeccccccccccfffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeefecccccccccccccccffffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeccccccccccfffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeeeecccccccccccccccffffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeccccccccccfffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeeeeccccccccccccccccfffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeeeeccccccccccccccccfffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeeeeccccccccccccccccfffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffebbbbbbbbbbbbbeeeeeeeeeeeeeeeeecccfffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // `)
-    // idle.addAnimationFrame(img`
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3333fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33333333333333fffffffffffffffffffffffffffffff3333333fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33333333333333333333333333333333fffffffffffffffffff33333333333fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3333333333333333333333333333333333333333333ffffffffff333333333333333fffffffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333fff33333333333333333ffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffff33ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff33333ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffff33333333ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffff333333333333ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffff3333333333333333ffffffffff
-    // ffffffffffffffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffff3333333333333333333ffffffffff
-    // ffffffffffffffffff3333ffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333ff333333333333333333333ffffffffff
-    // ffffffffffffffff33333333fffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffff
-    // fffffffffffffff3333333333fffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffff
-    // ffffffffffffff33333333333ffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // ffffffffffffff333333333333ffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // fffffffffffff333333ff33333ffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // fffffffffffff333333fff3333ffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffff
-    // fffffffffffff33333ffff3333fffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffff
-    // fffffffffffff33333ffff3333ffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffff
-    // fffff3fffffff33333ffff3333fffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffff
-    // ffffff3ffffff333333ff3333ffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffff
-    // ffffff33fffff333333ff3333fffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffff
-    // fffffff33ffff33333333333fffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffff
-    // ffffffff333fff333333333ffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffff
-    // fffffffff3333333333333ffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffff
-    // fffffffffff333333333333fffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff
-    // fffffffffffffff333333333fff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffff
-    // ffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffff
-    // ffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffff
-    // fffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffff
-    // ffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffff
-    // fffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffff
-    // fffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffff
-    // ffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffff
-    // fffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff
-    // fffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bb33333333333333fffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bffffb3333333333333ffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffff333333333333333ffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bffffffb3333333333333333ffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bffffffb333333333333322442ffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffff33333333333422222222effffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bffffb333333333322222222222efffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333bb333333333334222222222222fffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322222222222222ffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222222222222222ffff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222ee22222e22222fff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222ee2222eee2222fff
-    // ffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222eeee222eeee222fff
-    // ffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222eeee222eeee222fff
-    // ffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222eeee222eeee222fff
-    // ffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222eeee222eeee222fff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222ee2222eee2223fff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222ee22222e22223fff
-    // fffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333222222222222224ffff
-    // fffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322222222222222ffff
-    // fffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333334222222222222fffff
-    // fffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322222222222efffff
-    // ffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333422222224effffff
-    // ffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333322433ffffffff
-    // ffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffff
-    // fffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffff
-    // fffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // fffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffff
-    // fffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffff
-    // ffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffff
-    // ffffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffff
-    // ffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffff
-    // fffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffff
-    // fffffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffff
-    // fffffffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffff
-    // ffffffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffff
-    // fffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffffff
-    // ffffffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffff
-    // fffffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffff
-    // ffffffffffffffffffffffffff333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333fffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333ffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333333ffffffffffffffff33333333333333333333333333333ffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff333333333333333333333333333333333333333333333333fffffffffffffffff3333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333333333333333fffffffffffffffffff3333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333333fffffffffffffffffffff3333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333333ffffffffffffffffffffffff3333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333333333333333333333333333ffffffffffffffffffffffffffff333333333333333333333333333fffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333333333333333333333333333333333ffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff33333333333333333333333333ffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff3333333333333333333333333fffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333333333fff33333333333333fffffffffffffffffffffffffffffffffff3333333333333333333333333fffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff333333333333bbeff33333333333beefffffffffffffffffffffffffffffffffff3333333333333be3333333beefffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff33333333bbeeeeeff3333333beeeccccfffffffffffffffffffffffffffffffffff3333333bbbeeeeb33beeeccccffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffff3333bbeeeeeeeeeff333beeeccccccccfffffffffffffffffffffffffffffffffff333bbbeeeeeeeeeeeccccccccffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbbeeeeeeeeeeeeeefeeeccccccccccccfffffffffffffffffffffffffffffffffffbbeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeefecccccccccccccccffffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeccccccccccfffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeefecccccccccccccccffffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeccccccccccfffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeeeecccccccccccccccffffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeccccccccccfffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeeeeccccccccccccccccfffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeeeeccccccccccccccccfffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffbeeeeeeeeeeeeeeeeeccccccccccccccccfffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffebbbbbbbbbbbbbeeeeeeeeeeeeeeeeecccfffffffffffffffffffffffffffffffffeeeeeeeeeeeeeeeeeccccccccccffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    // `)
     animation.attachAnimation(piggy, idle)
     run = animation.createAnimation(ActionKind.Walking, 100)
     run.addAnimationFrame(img`
@@ -936,6 +341,13 @@ function initTRex () {
     piggy.z = 3
     piggy.setPosition(20, 94)
 }
+controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (piggy.y == 94 && end == 0) {
+        piggy.vy = -160
+        animation.setAction(piggy, ActionKind.Jumping)
+        music.playTone(587, music.beat(BeatFraction.Quarter))
+    }
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     end = 1
     animation.setAction(piggy, ActionKind.Dead)
@@ -1014,7 +426,7 @@ function initFlyAnimation () {
         `)
 }
 let cloud: Sprite = null
-let cactus: Sprite = null
+let obstacle: Sprite = null
 let choice = 0
 let dead: animation.Animation = null
 let jump: animation.Animation = null
@@ -1029,7 +441,7 @@ let end = 0
 game.setDialogCursor(assets.image`myImage0`)
 scene.setBackgroundColor(1)
 initGround()
-initTRex()
+initPiggy()
 initFlyAnimation()
 info.setScore(0)
 end = 0
@@ -1065,14 +477,14 @@ game.onUpdateInterval(1000, function () {
 })
 game.onUpdateInterval(1000, function () {
     choice = randint(0, difficulty)
-    console.logValue("difficulty", difficulty)
-    console.logValue("choice", choice)
+    // console.logValue("difficulty", difficulty)
+    // console.logValue("choice", choice)
     if (choice == 0) {
-        cactus = sprites.createProjectileFromSide(assets.image`myImage1`, ground1.vx, 0)
-        cactus.y = 94
-        cactus.z = 2
+        obstacle = sprites.createProjectileFromSide(assets.image`myImage1`, ground1.vx, 0)
+        obstacle.y = 92
+        obstacle.z = 2
     } else if (choice == 1) {
-        cactus = sprites.createProjectileFromSide(img`
+        obstacle = sprites.createProjectileFromSide(img`
             ................
             ................
             ................
@@ -1106,10 +518,10 @@ game.onUpdateInterval(1000, function () {
             ..bb555dddddbc..
             ...bbcccccccc...
             `, ground1.vx, 0)
-        cactus.y = 94
-        cactus.z = 2
+        obstacle.y = 94
+        obstacle.z = 2
     } else if (choice == 2) {
-        cactus = sprites.createProjectileFromSide(img`
+        obstacle = sprites.createProjectileFromSide(img`
             ................
             ................
             ................
@@ -1143,8 +555,8 @@ game.onUpdateInterval(1000, function () {
             .f6111111666f...
             ..cccccccccf....
             `, ground1.vx, 0)
-        cactus.y = 94
-        cactus.z = 2
+        obstacle.y = 91
+        obstacle.z = 2
     } else if (choice == 3) {
     	
     } else if (choice == 4) {
