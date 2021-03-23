@@ -49,7 +49,9 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
         music.playTone(587, music.beat(BeatFraction.Quarter))
     }
 })
-function sendMessageToWebParent (action: string, data: string) {
+// Send a data payload to the hosting iframe of the simulator.
+// https://forum.makecode.com/t/extension-to-interact-with-the-web-in-exported-games/4262
+function sendMessageToSimulator (action: string, data: string) {
     const json = {
         action: action,
         data: data
@@ -136,7 +138,7 @@ game.onUpdateInterval(50, function () {
             . . . . . . . . . . . . . . . . 
             `)
         game.splash("Získali jste odznak,", "pokračujte...")
-        sendMessageToWebParent("event", "userEarnedBadge1")
+        sendMessageToSimulator("event", "userEarnedBadge1")
     }
     if (info.score() % 100 == 0) {
         music.baDing.play()
