@@ -17,9 +17,8 @@ addSimMessageHandler("web", (data) => {
             window.open(url, "_blank");
             break;
         case "event":
-            const type = data.data;
-            if (type === 'userEarnedBadge1')
-                console.log('test');
+            const eventName = "makecode-" + data.data;
+            window.dispatchEvent(new Event(eventName));
             break;
     }                    
 })
