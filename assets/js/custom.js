@@ -18,7 +18,8 @@ addSimMessageHandler("web", (data) => {
             break;
         case "event":
             const eventName = "makecode-" + data.data;
-            window.dispatchEvent(new Event(eventName));
+            window.parent.document.dispatchEvent(new Event(eventName));
+            console.log('test', eventName);
             break;
     }                    
 })
