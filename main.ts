@@ -84,7 +84,6 @@ let pterodactyl: Sprite = null
 let ground2: Sprite = null
 let ground1: Sprite = null
 let end = 0
-game.splash("Trendaro nyní opravujeme,", "mezitím si zahrajte...")
 game.setDialogCursor(assets.image`piggy 1`)
 scene.setBackgroundColor(1)
 initGround()
