@@ -1,4 +1,4 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.4.28/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.3.6","target":"arcade","targetVersion":"1.4.28","repo":"josefjezek/piggy-run"}
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.4.28/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.3.7","target":"arcade","targetVersion":"1.4.28","repo":"josefjezek/piggy-run"}
 // total=1680518 new=8.52% cached=86.49% other=4.99%
 (function (ectx) {
 'use strict';
@@ -473,7 +473,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P431032(s) {
+function _main___P431055(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1009,13 +1009,13 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-_main___P431032.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
-_main___P431032.continuations = [  ]
+_main___P431055.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
+_main___P431055.continuations = [  ]
 
-function _main___P431032_mk(s) {
+function _main___P431055_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P431032, depth: s.depth + 1,
+        parent: s, fn: _main___P431055, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -56264,5 +56264,5 @@ const sprites_StaticObstacle__C396492_VT = mkVTable({
 
 const breakpoints = setupDebugger(1, ["Ground___430149","Cloud___430152","piggy___430217","end___430280","difficulty___430383","ground1___430156","ground2___430163","choice___430372","obstacle___430370","bonus___430368","cloud___430366","pterodactyl___430195","fly___430209","run___430224","jump___430241","dead___430254"])
 
-return _main___P431032
+return _main___P431055
 })
