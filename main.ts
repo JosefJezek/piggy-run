@@ -42,7 +42,8 @@ function initPiggy () {
     piggy.setPosition(20, 94)
 }
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (piggy.y == 94 && end == 0) {
+    // Allow jump from 90px to resolve latency of button click in a web browser. The piggy is placed on 94px.
+    if (piggy.y > 90 && end == 0) {
         piggy.vy = -160
         animation.setAction(piggy, ActionKind.Jumping)
         music.playTone(587, music.beat(BeatFraction.Quarter))
@@ -64,6 +65,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     music.playTone(262, music.beat(BeatFraction.Quarter))
     info.changeScoreBy(100)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Cloud, function (sprite, otherSprite) {
+    otherSprite.say("+200")
+    otherSprite.destroy(effects.confetti, 200)
+    music.jumpUp.play()
+    info.changeScoreBy(200)
+})
 let cloud: Sprite = null
 let bonus: Sprite = null
 let obstacle: Sprite = null
@@ -77,6 +84,7 @@ let pterodactyl: Sprite = null
 let ground2: Sprite = null
 let ground1: Sprite = null
 let end = 0
+game.splash("Trendaro nyní opravujeme,", "mezitím si zahrajte...")
 game.setDialogCursor(assets.image`piggy 1`)
 scene.setBackgroundColor(1)
 initGround()
@@ -133,10 +141,10 @@ game.onUpdateInterval(1000, function () {
         obstacle.y = 92
         obstacle.z = 3
     } else if (choice == 3) {
-        bonus = sprites.create(assets.image`apple`, SpriteKind.Food)
-        bonus.setPosition(150, 100)
+        bonus = sprites.createProjectileFromSide(assets.image`apple`, ground1.vx, 0)
+        bonus.setKind(SpriteKind.Food)
+        bonus.y = 100
         bonus.z = 2
-        bonus.setVelocity(ground1.vx, 0)
         bonus.say("+100")
     } else if (choice == 4) {
         createPterodactyl()
