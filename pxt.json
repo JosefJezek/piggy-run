@@ -29,6 +29,6 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "tsprj",
+    "preferredEditor": "blocksprj",
     "disableTargetTemplateFiles": true
 }

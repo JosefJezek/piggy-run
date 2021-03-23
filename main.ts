@@ -137,8 +137,8 @@ game.onUpdateInterval(50, function () {
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             `)
-        game.splash("Získali jste odznak,", "pokračujte...")
         sendMessageToSimulator("event", "userEarnedBadge1")
+        game.splash("Získali jste odznak,", "pokračujte...")
     }
     if (info.score() % 100 == 0) {
         music.baDing.play()
