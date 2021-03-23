@@ -49,6 +49,15 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
         music.playTone(587, music.beat(BeatFraction.Quarter))
     }
 })
+function sendMessageToWebParent (action: string, data: string) {
+    const json = {
+        action: action,
+        data: data
+    }
+const msg = JSON.stringify(json)
+const buf = Buffer.fromUTF8(msg);
+control.simmessages.send('web', buf)
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     end = 1
     animation.setAction(piggy, ActionKind.Dead)
@@ -127,8 +136,7 @@ game.onUpdateInterval(50, function () {
             . . . . . . . . . . . . . . . . 
             `)
         game.splash("Získali jste odznak,", "pokračujte...")
-        web.open("https://trendaro-stage.web.app/maintenance.html?b=1")
-game.splash("Můžete hrát dále...")
+        sendMessageToWebParent("event", "userEarnedBadge1")
     }
     if (info.score() % 100 == 0) {
         music.baDing.play()

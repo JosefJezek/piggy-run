@@ -4,8 +4,7 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "animation": "*",
-        "arcade-browser": "github:pelikhan/arcade-browser#v0.0.4"
+        "animation": "*"
     },
     "files": [
         "main.blocks",
