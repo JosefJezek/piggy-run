@@ -4,7 +4,8 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "animation": "*"
+        "animation": "*",
+        "arcade-browser": "github:pelikhan/arcade-browser#v0.0.4"
     },
     "files": [
         "main.blocks",
@@ -29,5 +30,6 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "blocksprj",
+    "disableTargetTemplateFiles": true
 }

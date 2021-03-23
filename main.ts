@@ -94,6 +94,7 @@ info.setScore(0)
 end = 0
 let difficulty = 3
 game.showLongText("Hrajte mezerníkem nebo tlačítkem A", DialogLayout.Top)
+game.showLongText("Zkuste získat odznak :)", DialogLayout.Top)
 game.onUpdate(function () {
     if (piggy.y < 94) {
         piggy.ay = 400
@@ -107,6 +108,29 @@ game.onUpdate(function () {
 })
 game.onUpdateInterval(50, function () {
     info.changeScoreBy(1)
+    if (info.score() == 10) {
+        game.setDialogCursor(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `)
+        game.splash("Získali jste odznak,", "pokračujte...")
+        web.open("https://trendaro-stage.web.app/maintenance.html?b=1")
+game.splash("Můžete hrát dále...")
+    }
     if (info.score() % 100 == 0) {
         music.baDing.play()
     }
