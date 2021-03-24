@@ -64,6 +64,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     end = 1
     animation.setAction(piggy, ActionKind.Dead)
     pause(50)
+    sendMessageToSimulator("event", "gameOver-" + info.score())
     game.over(false, effects.dissolve)
 })
 function initFlyAnimation () {
@@ -137,8 +138,8 @@ game.onUpdateInterval(50, function () {
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             `)
-        sendMessageToSimulator("event", "userEarnedBadge1")
-        game.splash("Získali jste odznak,", "pokračujte...")
+        sendMessageToSimulator("event", "badge-5000")
+        game.splash("Získali jste odznak za 5000 bodů,", "pokračujte...")
     }
     if (info.score() % 100 == 0) {
         music.baDing.play()
