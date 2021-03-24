@@ -85,7 +85,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
             `)
         game.splash("Získali jste odznak", "za 5000 bodů!")
     }
-    sendMessageToSimulator("event", "gameOver-" + info.score())
+    game.splash("Doba běhu", "" + convertToText(game.runtime() / 1000) + " s")
+    sendMessageToSimulator("event", "gameOver-" + info.score() + "-" + game.runtime())
     game.over(false, effects.dissolve)
 })
 function initFlyAnimation () {
