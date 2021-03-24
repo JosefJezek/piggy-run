@@ -119,7 +119,7 @@ game.onUpdate(function () {
 })
 game.onUpdateInterval(50, function () {
     info.changeScoreBy(1)
-    if (info.score() == 10) {
+    if (info.score() == 5000) {
         game.setDialogCursor(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
