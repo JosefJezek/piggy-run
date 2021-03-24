@@ -64,7 +64,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     end = 1
     animation.setAction(piggy, ActionKind.Dead)
     pause(50)
+    sendMessageToSimulator("event", "gameOver-" + info.score() + "-" + game.runtime())
     if (info.score() >= 5000) {
+        music.magicWand.play()
         game.setDialogCursor(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -85,8 +87,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
             `)
         game.splash("Získali jste odznak", "za 5000 bodů!")
     }
+    game.setDialogCursor(assets.image`piggy 1`)
     game.splash("Doba běhu", "" + convertToText(game.runtime() / 1000) + " s")
-    sendMessageToSimulator("event", "gameOver-" + info.score() + "-" + game.runtime())
     game.over(false, effects.dissolve)
 })
 function initFlyAnimation () {
