@@ -85,7 +85,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             `)
-        game.splash("Získali jste odznak", "za 5000 bodů!")
+        game.splash("Gratulujeme!", "Odznak je váš!")
     }
     game.setDialogCursor(assets.image`piggy 1`)
     sendMessageToSimulator("event", "gameOver-" + info.score() + "-" + timeSinceStart)
