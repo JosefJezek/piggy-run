@@ -129,8 +129,7 @@ initFlyAnimation()
 info.setScore(0)
 end = 0
 let difficulty = 3
-game.showLongText("Hrajte mezerníkem nebo tlačítkem A", DialogLayout.Top)
-game.showLongText("Zkuste získat odznak :)", DialogLayout.Top)
+game.showLongText("Hrajte mezerníkem nebo tlačítkem A, zkuste získat odznak :)", DialogLayout.Top)
 game.onUpdate(function () {
     if (piggy.y < 94) {
         piggy.ay = 400
