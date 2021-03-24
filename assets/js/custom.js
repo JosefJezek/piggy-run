@@ -17,10 +17,10 @@ addSimMessageHandler("web", (data) => {
             window.open(url, "_blank");
             break;
         case "event":
-            const eventName = "makecode-" + data.data;
-            window.parent.postMessage(eventName, "http://127.0.0.1:8082");
-            console.log('test', eventName);
-            localStorage.setItem('myCat', 'Tom');
+            const msg = data.data;
+            window.parent.postMessage(msg, "http://127.0.0.1:8081");
+            window.parent.postMessage(msg, "https://trendaro-stage.web.app");
+            window.parent.postMessage(msg, "https://trendaro.cz");
             break;
     }                    
 })
