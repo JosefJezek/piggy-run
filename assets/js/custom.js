@@ -21,6 +21,8 @@ addSimMessageHandler("web", (data) => {
             window.parent.postMessage(msg, "http://127.0.0.1:8081");
             window.parent.postMessage(msg, "https://trendaro-stage.web.app");
             window.parent.postMessage(msg, "https://trendaro.cz");
+            // Cordova
+            window.parent.postMessage(msg, "file://");
             break;
     }                    
 })
