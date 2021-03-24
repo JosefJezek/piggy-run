@@ -42,8 +42,8 @@ function initPiggy () {
     piggy.setPosition(20, 94)
 }
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    // Allow jump from 90px to resolve latency of button click in a web browser. The piggy is placed on 94px.
-    if (piggy.y > 90 && end == 0) {
+    // Allow jump from 80px to resolve latency of button click in a web browser. The piggy is placed on 94px.
+    if (piggy.y > 80 && end == 0) {
         piggy.vy = -160
         animation.setAction(piggy, ActionKind.Jumping)
         music.playTone(587, music.beat(BeatFraction.Quarter))
