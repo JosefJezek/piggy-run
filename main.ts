@@ -88,7 +88,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
         game.splash("Získali jste odznak", "za 5000 bodů!")
     }
     game.setDialogCursor(assets.image`piggy 1`)
-    game.splash("Doba běhu", "" + convertToText(timeSinceStart / 1000) + " s")
     sendMessageToSimulator("event", "gameOver-" + info.score() + "-" + timeSinceStart)
     game.over(false, effects.dissolve)
 })
