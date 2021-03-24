@@ -62,6 +62,7 @@ control.simmessages.send('web', buf)
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     end = 1
+    timeSinceStart = game.runtime()
     animation.setAction(piggy, ActionKind.Dead)
     pause(50)
     if (info.score() >= 5000) {
@@ -87,10 +88,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
         game.splash("Získali jste odznak", "za 5000 bodů!")
     }
     game.setDialogCursor(assets.image`piggy 1`)
-    game.splash("Doba běhu", "" + convertToText(game.runtime() / 1000) + " s")
-    sendMessageToSimulator("event", "gameOver-" + info.score() + "-" + game.runtime())
+    game.splash("Doba běhu", "" + convertToText(timeSinceStart / 1000) + " s")
+    sendMessageToSimulator("event", "gameOver-" + info.score() + "-" + timeSinceStart)
     game.over(false, effects.dissolve)
-    sendMessageToSimulator("event", "gameOver-" + info.score() + "-" + game.runtime() + "-" + info.highScore())
 })
 function initFlyAnimation () {
     fly = animation.createAnimation(ActionKind.Flying, 350)
@@ -112,6 +112,7 @@ let cloud: Sprite = null
 let bonus: Sprite = null
 let obstacle: Sprite = null
 let choice = 0
+let timeSinceStart = 0
 let dead: animation.Animation = null
 let jump: animation.Animation = null
 let run: animation.Animation = null
@@ -143,6 +144,9 @@ game.onUpdate(function () {
     }
 })
 game.onUpdateInterval(50, function () {
+    if (end == 1) {
+        return
+    }
     info.changeScoreBy(1)
     if (info.score() % 100 == 0) {
         music.baDing.play()
