@@ -39,11 +39,11 @@ function initPiggy () {
     dead.addAnimationFrame(assets.image`piggy 5`)
     animation.attachAnimation(piggy, dead)
     piggy.z = 3
-    piggy.setPosition(20, 94)
+    piggy.setPosition(20, 98)
 }
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    // Allow jump from 80px to resolve latency of button click in a web browser. The piggy is placed on 94px.
-    if (piggy.y > 80 && end == 0) {
+    // Allow jump from 85px to resolve latency of button click in a web browser. The piggy is placed on 98px.
+    if (piggy.y > 85 && end == 0) {
         piggy.vy = -160
         animation.setAction(piggy, ActionKind.Jumping)
         music.playTone(587, music.beat(BeatFraction.Quarter))
@@ -144,15 +144,16 @@ initGround()
 initPiggy()
 initFlyAnimation()
 info.setScore(0)
+let counter = 0
 end = 0
 let difficulty = 3
 game.showLongText("Hrajte mezerníkem nebo tlačítkem A, zkuste získat odznak :)", DialogLayout.Top)
 game.onUpdate(function () {
-    if (piggy.y < 94) {
+    if (piggy.y < 98) {
         piggy.ay = 400
     } else {
         piggy.ay = 0
-        piggy.y = 94
+        piggy.y = 98
         if (end == 0) {
             animation.setAction(piggy, ActionKind.Walking)
         }
@@ -163,11 +164,25 @@ game.onUpdateInterval(50, function () {
         return
     }
     info.changeScoreBy(1)
-    if (info.score() % 100 == 0) {
-        music.baDing.play()
+    counter += 1
+    if (counter == 300) {
+        music.pewPew.play()
+        piggy.say("RUN!", 5000)
+    } else if (counter == 1100) {
+        music.pewPew.play()
+        piggy.say("SUPER!", 5000)
+    } else if (counter == 2100) {
+        music.pewPew.play()
+        piggy.say("WOW!", 5000)
     }
-    if (info.score() % 1000 == 0) {
-        if (info.score() / 1000 % 2 == 0) {
+    if (counter % 500 == 0) {
+        scene.setBackgroundColor(15)
+    }
+    if (counter % 1000 == 0) {
+        scene.setBackgroundColor(1)
+    }
+    if (counter % 1000 == 0) {
+        if (counter / 1000 % 2 == 0) {
             difficulty = difficulty - 1
         } else {
             difficulty = difficulty + 1
@@ -186,20 +201,20 @@ game.onUpdateInterval(1000, function () {
     // console.logValue("choice", choice)
     if (choice == 0) {
         obstacle = sprites.createProjectileFromSide(assets.image`tree`, ground1.vx, 0)
-        obstacle.y = 96
+        obstacle.y = 100
         obstacle.z = 3
     } else if (choice == 1) {
         obstacle = sprites.createProjectileFromSide(assets.image`mushrooms`, ground1.vx, 0)
-        obstacle.y = 99
+        obstacle.y = 104
         obstacle.z = 3
     } else if (choice == 2) {
         obstacle = sprites.createProjectileFromSide(assets.image`snake`, ground1.vx, 0)
-        obstacle.y = 92
+        obstacle.y = 94
         obstacle.z = 3
     } else if (choice == 3) {
         bonus = sprites.createProjectileFromSide(assets.image`apple`, ground1.vx, 0)
         bonus.setKind(SpriteKind.Food)
-        bonus.y = 100
+        bonus.y = 104
         bonus.z = 2
         bonus.say("+100")
     } else if (choice == 4) {
