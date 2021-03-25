@@ -115,11 +115,11 @@ let timeSinceStart = 0
 let dead: animation.Animation = null
 let jump: animation.Animation = null
 let run: animation.Animation = null
-let piggy: Sprite = null
 let fly: animation.Animation = null
 let pterodactyl: Sprite = null
 let ground2: Sprite = null
 let ground1: Sprite = null
+let piggy: Sprite = null
 let end = 0
 game.setDialogCursor(img`
     . . . . . . . . . . . . . . . . 
@@ -147,7 +147,9 @@ info.setScore(0)
 let counter = 0
 end = 0
 let difficulty = 3
+piggy.say("3-2-1!")
 game.showLongText("Hrajte mezerníkem nebo tlačítkem A, zkuste získat odznak :)", DialogLayout.Top)
+piggy.say("RUN!", 2000)
 game.onUpdate(function () {
     if (piggy.y < 98) {
         piggy.ay = 400
@@ -167,10 +169,10 @@ game.onUpdateInterval(50, function () {
     counter += 1
     if (counter == 300) {
         music.pewPew.play()
-        piggy.say("RUN!", 5000)
+        piggy.say("SUPER!", 5000)
     } else if (counter == 1100) {
         music.pewPew.play()
-        piggy.say("SUPER!", 5000)
+        piggy.say("COOL!", 5000)
     } else if (counter == 2100) {
         music.pewPew.play()
         piggy.say("WOW!", 5000)
