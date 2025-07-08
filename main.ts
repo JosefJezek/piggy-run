@@ -24,7 +24,7 @@ function createPterodactyl () {
     pterodactyl.y = 70
     pterodactyl.z = 2
     animation.attachAnimation(pterodactyl, fly)
-    animation.setAction(pterodactyl, ActionKind.Flying)
+    animation.setAction(pterodactyl, ActionKind.Walking)
 }
 function initPiggy () {
     piggy = sprites.create(assets.image`piggy 1`, SpriteKind.Player)
@@ -32,20 +32,20 @@ function initPiggy () {
     run.addAnimationFrame(assets.image`piggy 2`)
     run.addAnimationFrame(assets.image`piggy 3`)
     animation.attachAnimation(piggy, run)
-    jump = animation.createAnimation(ActionKind.Jumping, 200)
+    jump = animation.createAnimation(ActionKind.Walking, 200)
     jump.addAnimationFrame(assets.image`piggy 4`)
     animation.attachAnimation(piggy, jump)
-    dead = animation.createAnimation(ActionKind.Dead, 200)
+    dead = animation.createAnimation(ActionKind.Walking, 200)
     dead.addAnimationFrame(assets.image`piggy 5`)
     animation.attachAnimation(piggy, dead)
     piggy.z = 3
     piggy.setPosition(20, 98)
 }
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    // Allow jump from 85px to resolve latency of button click in a web browser. The piggy is placed on 98px.
+    // Allow jump from 85px to resolve latency of button click in a web browser. The piggy is placed on 98px.  
     if (piggy.y > 85 && end == 0) {
         piggy.vy = -160
-        animation.setAction(piggy, ActionKind.Jumping)
+        animation.setAction(piggy, ActionKind.Walking)
         music.playTone(587, music.beat(BeatFraction.Quarter))
     }
 })
@@ -63,19 +63,17 @@ control.simmessages.send('web', buf)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     end = 1
     timeSinceStart = game.runtime()
-    animation.setAction(piggy, ActionKind.Dead)
+    animation.setAction(piggy, ActionKind.Walking)
     pause(50)
     if (info.score() > 5000) {
         music.magicWand.play()
-        game.setDialogCursor(assets.image`empty`)
-        game.splash("Gratulujeme!", "Získali jste více jak 5000 bodů!")
     }
     game.setDialogCursor(assets.image`piggy 1`)
     sendMessageToSimulator("event", "gameOver-" + info.score() + "-" + timeSinceStart)
     game.over(false, effects.dissolve)
 })
 function initFlyAnimation () {
-    fly = animation.createAnimation(ActionKind.Flying, 350)
+    fly = animation.createAnimation(ActionKind.Walking, 350)
     fly.addAnimationFrame(assets.image`pterodactyl 1`)
     fly.addAnimationFrame(assets.image`pterodactyl 2`)
 }
