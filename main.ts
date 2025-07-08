@@ -42,7 +42,7 @@ function initPiggy () {
     piggy.setPosition(20, 98)
 }
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
-    // Allow jump from 85px to resolve latency of button click in a web browser. The piggy is placed on 98px.  
+    // Allow jump from 85px to resolve latency of button click in a web browser. The piggy is placed on 98px. 
     if (piggy.y > 85 && end == 0) {
         piggy.vy = -160
         animation.setAction(piggy, ActionKind.Walking)
