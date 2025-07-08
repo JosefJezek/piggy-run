@@ -183,7 +183,7 @@ game.onUpdateInterval(1000, function () {
         bonus.setKind(SpriteKind.Food)
         bonus.y = 104
         bonus.z = 2
-        bonus.say("+100", 1000)
+        bonus.say("+100", 500)
     } else if (choice == 4) {
         createPterodactyl()
     }
