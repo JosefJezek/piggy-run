@@ -32,10 +32,10 @@ function initPiggy () {
     run.addAnimationFrame(assets.image`piggy 2`)
     run.addAnimationFrame(assets.image`piggy 3`)
     animation.attachAnimation(piggy, run)
-    jump = animation.createAnimation(ActionKind.Walking, 200)
+    jump = animation.createAnimation(ActionKind.Jumping, 200)
     jump.addAnimationFrame(assets.image`piggy 4`)
     animation.attachAnimation(piggy, jump)
-    dead = animation.createAnimation(ActionKind.Walking, 200)
+    dead = animation.createAnimation(ActionKind.Dead, 200)
     dead.addAnimationFrame(assets.image`piggy 5`)
     animation.attachAnimation(piggy, dead)
     piggy.z = 3
@@ -45,7 +45,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     // Allow jump from 85px to resolve latency of button click in a web browser. The piggy is placed on 98px. 
     if (piggy.y > 85 && end == 0) {
         piggy.vy = -160
-        animation.setAction(piggy, ActionKind.Walking)
+        animation.setAction(piggy, ActionKind.Jumping)
         music.playTone(587, music.beat(BeatFraction.Quarter))
     }
 })
@@ -63,7 +63,7 @@ control.simmessages.send('web', buf)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     end = 1
     timeSinceStart = game.runtime()
-    animation.setAction(piggy, ActionKind.Walking)
+    animation.setAction(piggy, ActionKind.Dead)
     pause(50)
     if (info.score() > 5000) {
         music.magicWand.play()
@@ -114,6 +114,7 @@ let difficulty = 3
 piggy.say("3-2-1!")
 game.showLongText("Hrajte mezerníkem nebo tlačítkem A :)", DialogLayout.Top)
 piggy.say("RUN!", 2000)
+animation.setAction(piggy, ActionKind.Walking)
 game.onUpdate(function () {
     if (piggy.y < 98) {
         piggy.ay = 400
@@ -131,13 +132,13 @@ game.onUpdateInterval(50, function () {
     }
     info.changeScoreBy(1)
     counter += 1
-    if (counter == 300) {
+    if (counter == 500) {
         music.pewPew.play()
         piggy.say("SUPER!", 5000)
-    } else if (counter == 1100) {
+    } else if (counter == 5000) {
         music.pewPew.play()
         piggy.say("COOL!", 5000)
-    } else if (counter == 2100) {
+    } else if (counter == 10000) {
         music.pewPew.play()
         piggy.say("WOW!", 5000)
     }
@@ -182,7 +183,7 @@ game.onUpdateInterval(1000, function () {
         bonus.setKind(SpriteKind.Food)
         bonus.y = 104
         bonus.z = 2
-        bonus.say("+100")
+        bonus.say("+100", 1000)
     } else if (choice == 4) {
         createPterodactyl()
     }
@@ -192,8 +193,9 @@ game.onUpdateInterval(1000, function () {
 game.onUpdateInterval(1500, function () {
     if (Math.percentChance(40)) {
         cloud = sprites.createProjectileFromSide(assets.image`cloud`, ground1.vx / 4, 0)
-        cloud.y = randint(20, 60)
+        cloud.y = randint(40, 60)
         cloud.setKind(SpriteKind.Cloud)
         cloud.z = 1
+        cloud.say("+200", 2000)
     }
 })
